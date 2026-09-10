@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 96 716 190" role="img" aria-label="Leran AI Consulting">
+  <defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <path fill="#16202F" d="M90 104h14v79h66v14H90ZM218 104h80v13h-66v27h66v14h-66v26h66v13h-80ZM358 104h15v93h-15ZM373 104h45c23 0 42 12 42 31s-19 31-42 31h-29v-14h29c14 0 27-6 27-17s-13-17-27-17h-45ZM421 166h18l17 31h-18ZM679 104h14v93h-14Z M771 104h14v93h-14Z M679 104h20l86 93h-20Z"/>
+  <path fill="#3E8BE0" d="M560 104h19l46 94h-19l-36.5-76L533 198h-19Z"/>
+  <g fill="#3E8BE0" stroke="#3E8BE0">
+    <line x1="90" y1="264" x2="189" y2="264" stroke-width="2"/>
+    <line x1="676" y1="264" x2="775" y2="264" stroke-width="2"/>
+    <text x="432.5" y="276" text-anchor="middle" stroke="none" font-family="Sora, Poppins, Montserrat, sans-serif" font-weight="400" font-size="34" letter-spacing="7.5" textLength="430" lengthAdjust="spacingAndGlyphs">AI CONSULTING</text>
+  </g>
+</svg>
