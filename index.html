@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="meta.title">Leran AI — Inteligencia artificial a medida para tu negocio</title>
-<meta name="description" data-i18n-attr="content" data-i18n="meta.desc" content="Consultoría e ingeniería de inteligencia artificial. Automatización de procesos y software a medida. Empezamos con una auditoría gratuita y sin compromiso.">
-<meta property="og:title" content="Leran AI — AI Consulting">
-<meta property="og:description" content="Automatización de procesos y software a medida. Auditoría gratuita y sin compromiso.">
-<meta name="theme-color" content="#0D1522">
+<script>document.documentElement.className='js';</script>
+<title data-i18n="meta.title">Leran AI — Automatización e IA para recuperar las horas que pierde tu equipo</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta.desc" content="Automatizamos con inteligencia artificial las tareas repetitivas de tu empresa y construimos el software que no encuentras en el mercado. Empezamos con una auditoría gratuita y sin compromiso.">
+<meta property="og:title" content="Leran AI — Recupera las horas que tu equipo pierde en tareas que no aportan">
+<meta property="og:description" content="Automatización e inteligencia artificial para pymes y empresas. Auditoría gratuita y sin compromiso.">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230D1522'/%3E%3Cpath fill='%233E8BE0' d='M13.5 6h5l8 20h-5l-5.5-14.5L10.5 26h-5z'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/sora-latin.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="fonts/plex-sans-latin.woff" as="font" type="font/woff" crossorigin>
@@ -31,169 +32,251 @@
   --on-dark-soft:rgba(243,247,251,.68);
   --line-dark:rgba(140,194,245,.16);
   --line-light:rgba(22,32,47,.14);
+  --green-bg:#E3F2EA;
+  --green:#1F8A5B;
+  --red-bg:#FBE6E6;
+  --red:#C0393B;
   --display:"Sora",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --max:1180px;
   --gutter:clamp(20px,4vw,48px);
+  --radius:14px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --shadow:0 18px 40px -22px rgba(22,32,47,.28);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
-  margin:0;background:var(--navy-900);color:var(--on-dark);
+  margin:0;background:#fff;color:var(--ink);
   font-family:var(--body);font-size:17px;line-height:1.6;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
-h1,h2,h3,p{margin:0}
-h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:-.02em;line-height:1.08}
-h3{font-weight:500;letter-spacing:-.01em;line-height:1.25}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.02em;line-height:1.1}
+h3{font-weight:500;letter-spacing:-.01em;line-height:1.3}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* ---------- Header ---------- */
-.header{position:sticky;top:0;z-index:50;background:rgba(13,21,34,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-dark)}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-light)}
 .header .wrap{display:flex;align-items:center;gap:28px;min-height:76px}
-.logo{display:block;width:168px;flex:none;color:var(--on-dark)}
+.logo{display:block;width:168px;flex:none;color:var(--ink)}
 .logo-svg{width:100%;height:auto;display:block;overflow:visible}
 .logo-letters{fill:currentColor}
-.nav{display:flex;gap:26px;margin-left:auto;font-size:.95rem;color:var(--on-dark-soft)}
-.nav a:hover{color:var(--on-dark)}
-.lang{display:inline-flex;border:1px solid var(--line-dark);border-radius:999px;padding:3px;font-size:.82rem;font-weight:500}
-.lang button{padding:5px 11px;border-radius:999px;color:var(--on-dark-soft);transition:background .2s,color .2s}
-.lang button[aria-pressed="true"]{background:var(--blue);color:#fff}
-.lang button:not([aria-pressed="true"]):hover{color:var(--on-dark)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border-radius:8px;font-weight:500;font-size:.98rem;line-height:1;transition:background .2s,color .2s,border-color .2s,transform .2s}
-.btn-primary{background:var(--blue);color:#fff}
-.btn-primary:hover{background:var(--blue-deep)}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:.95rem;color:var(--ink-soft)}
+.nav a{transition:color .2s}
+.nav a:hover{color:var(--blue-deep)}
+.lang{display:inline-flex;border:1px solid var(--line-light);border-radius:999px;padding:3px;font-size:.82rem;font-weight:500}
+.lang button{padding:5px 11px;border-radius:999px;color:var(--ink-soft);transition:background .2s,color .2s}
+.lang button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.lang button:not([aria-pressed="true"]):hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:8px;font-weight:500;font-size:.98rem;line-height:1;transition:background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s}
+/* Azul profundo en botones: blanco sobre #2F6FB8 cumple contraste AA (5.1:1) */
+.btn-primary{background:var(--blue-deep);color:#fff}
+.btn-primary:hover{background:#275E9E;transform:translateY(-1px);box-shadow:0 10px 24px -12px rgba(47,111,184,.8)}
 .btn-ghost{border:1px solid var(--line-dark);color:var(--on-dark)}
 .btn-ghost:hover{border-color:var(--blue-light);color:var(--blue-light)}
 .btn-light{border:1px solid var(--line-light);color:var(--ink)}
 .btn-light:hover{border-color:var(--blue);color:var(--blue-deep)}
 .header .btn{padding:11px 18px;font-size:.92rem}
-.menu-toggle{display:none;width:44px;height:44px;margin-left:auto;border:1px solid var(--line-dark);border-radius:8px;align-items:center;justify-content:center}
-.menu-toggle span{display:block;width:18px;height:2px;background:var(--on-dark);position:relative}
-.menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--on-dark)}
+.menu-toggle{display:none;width:44px;height:44px;margin-left:auto;border:1px solid var(--line-light);border-radius:8px;align-items:center;justify-content:center}
+.menu-toggle span{display:block;width:18px;height:2px;background:var(--ink);position:relative}
+.menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink)}
 .menu-toggle span::before{top:-6px}.menu-toggle span::after{top:6px}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;overflow:hidden;background:var(--navy-900);min-height:min(88vh,860px);display:flex;align-items:center}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,21,34,.92) 0%,rgba(13,21,34,.62) 34%,rgba(13,21,34,.05) 58%,rgba(13,21,34,0) 100%);pointer-events:none}
-@media (max-width:820px){.hero::after{background:linear-gradient(180deg,rgba(13,21,34,.55) 0%,rgba(13,21,34,.86) 55%,rgba(13,21,34,.97) 100%)}}
-.hero .wrap{position:relative;z-index:2;padding-block:clamp(72px,11vh,128px)}
-.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--ice) 100%)}
+.hero::before{content:"";position:absolute;right:-12vw;top:-30%;width:56vw;height:160%;background:radial-gradient(ellipse at center,rgba(62,139,224,.12),transparent 62%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;padding-block:clamp(64px,9vw,112px) clamp(56px,8vw,96px)}
+.hero-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;align-items:center}
+.hero-grid > *{min-width:0}
 .hero-copy{grid-column:1/8}
-.hero h1{font-size:clamp(2.35rem,5.4vw,4.4rem);max-width:15ch;opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) .15s forwards}
-.hero p{margin-top:28px;font-size:clamp(1.05rem,1.4vw,1.2rem);max-width:56ch;color:var(--on-dark-soft);opacity:0;animation:fade .8s ease .55s forwards}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;opacity:0;animation:fade .8s ease .8s forwards}
-.hero-contact{margin-top:34px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:.95rem;color:var(--on-dark-soft);opacity:0;animation:fade .8s ease 1s forwards}
-.hero-contact a{color:var(--blue-light);border-bottom:1px solid transparent}
-.hero-contact a:hover{border-color:var(--blue-light)}
-.hero-legend{position:absolute;z-index:2;right:var(--gutter);bottom:26px;display:flex;gap:26px;font-size:.8rem;color:var(--on-dark-soft)}
+.eyebrow{display:block;position:relative;padding-left:40px;font-size:.82rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;color:var(--blue-deep)}
+.eyebrow::before{content:"";position:absolute;left:0;top:.65em;width:28px;height:2px;background:var(--blue)}
+.hero h1{margin-top:22px;font-size:clamp(2.2rem,4.8vw,3.9rem);max-width:15ch;opacity:0;transform:translateY(18px);animation:rise .9s var(--ease) .1s forwards}
+.hero p{margin-top:26px;font-size:clamp(1.05rem,1.35vw,1.18rem);max-width:54ch;color:var(--ink-soft);opacity:0;animation:fade .8s ease .45s forwards}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;opacity:0;animation:fade .8s ease .65s forwards}
+.hero-contact{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:.95rem;color:var(--ink-soft);opacity:0;animation:fade .8s ease .85s forwards}
+.hero-contact a{color:var(--blue-deep);border-bottom:1px solid transparent;transition:border-color .2s}
+.hero-contact a:hover{border-color:var(--blue-deep)}
+
+/* Hero: comparativa manual vs automatizado */
+.hero-visual{grid-column:8/13;opacity:0;transform:translateY(18px);animation:rise .9s var(--ease) .35s forwards}
+.compare{background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);padding:26px 26px 22px;box-shadow:var(--shadow)}
+.compare-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.compare-head h2{font-size:1.05rem;font-weight:500;letter-spacing:-.01em;line-height:1.3;max-width:20ch}
+.compare-head span{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-deep);white-space:nowrap;padding-top:4px}
+.hero-legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:16px;font-size:.82rem;color:var(--ink-soft)}
 .hero-legend span{display:flex;align-items:center;gap:8px}
-.hero-legend i{width:26px;height:2px;background:rgba(243,247,251,.45)}
+.hero-legend i{width:22px;height:8px;border-radius:999px;background:#C3CFDD}
 .hero-legend i.on{background:var(--blue)}
-@media (max-width:820px){.hero-legend{display:none}}
+.compare-rows{display:grid;gap:16px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line-light)}
+.crow{display:grid;gap:6px}
+.crow b{font-weight:500;font-size:.9rem;color:var(--ink)}
+.bar{height:8px;border-radius:999px;background:var(--ice)}
+.bar i{display:block;height:100%;border-radius:999px;background:#C3CFDD;width:var(--w,100%);transform:scaleX(0);transform-origin:left center;transition:transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.bar.on i{background:var(--blue)}
+.loaded .bar i{transform:none}
+.compare-note{margin-top:18px;font-size:.8rem;color:var(--ink-soft)}
 @keyframes rise{to{opacity:1;transform:none}}
 @keyframes fade{to{opacity:1}}
 @media (prefers-reduced-motion:reduce){
-  .hero h1,.hero p,.hero-actions,.hero-contact{animation:none;opacity:1;transform:none}
+  .hero h1,.hero p,.hero-actions,.hero-contact,.hero-visual{animation:none;opacity:1;transform:none}
+  .bar i{transition:none;transform:none}
+  .btn-primary:hover{transform:none}
 }
 
 /* ---------- Sections ---------- */
-.section{padding-block:clamp(72px,9vw,128px)}
-.section-light{background:var(--ice);color:var(--ink)}
-.section-dark{background:var(--navy);color:var(--on-dark)}
-.section h2{font-size:clamp(1.9rem,3.6vw,3rem);max-width:22ch}
-.lede{margin-top:22px;font-size:clamp(1.02rem,1.3vw,1.15rem);max-width:58ch;color:var(--ink-soft)}
+.section{padding-block:clamp(72px,9vw,120px)}
+.section-white{background:#fff;color:var(--ink)}
+.section-ice{background:var(--ice);color:var(--ink)}
+.section-dark{background:var(--navy);color:var(--on-dark);position:relative}
+.section-dark::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue) 30%,var(--blue) 70%,transparent)}
+.section h2{font-size:clamp(1.85rem,3.4vw,2.8rem);max-width:22ch}
+.lede{margin-top:20px;font-size:clamp(1.02rem,1.3vw,1.15rem);max-width:58ch;color:var(--ink-soft)}
 .section-dark .lede{color:var(--on-dark-soft)}
-.head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
-.head h2{grid-column:1/8}
-.head .lede{grid-column:1/9;margin-top:22px}
+.head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.head > *{grid-column:1/9}
+.head .lede{margin-top:20px}
+/* Marca de sección: línea azul fina + número grande en azul */
+.sec-mark{display:flex;align-items:baseline;gap:14px;padding-top:16px;margin-bottom:22px;border-top:2px solid var(--blue);width:max-content}
+.sec-mark b{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.6vw,2.9rem);line-height:1;letter-spacing:-.03em;color:var(--blue)}
+.sec-mark span{font-size:.82rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.section-dark .sec-mark span{color:var(--on-dark-soft)}
 
-/* Audit */
-.audit-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:64px}
-.steps{grid-column:1/8;counter-reset:step;display:grid;gap:0}
-.step{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:28px 0;border-top:1px solid var(--line-light);counter-increment:step}
-.step:last-child{border-bottom:1px solid var(--line-light)}
-.step::before{content:counter(step);font-family:var(--display);font-weight:300;font-size:2.4rem;line-height:1;color:var(--blue);letter-spacing:-.03em}
-.step h3{font-size:1.2rem}
-.step p{margin-top:8px;color:var(--ink-soft);max-width:52ch}
-.audit-card{grid-column:9/13;align-self:start;background:var(--navy);color:var(--on-dark);border-radius:14px;padding:30px 28px;position:relative;overflow:hidden}
-.audit-card::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(62,139,224,.35),transparent 70%)}
-.audit-card h3{font-size:1.15rem;position:relative}
-.audit-card p{margin-top:10px;color:var(--on-dark-soft);font-size:.95rem;position:relative}
-.contact-lines{display:grid;gap:10px;margin-top:22px;position:relative}
-.contact-lines a{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line-dark);border-radius:10px;font-weight:500;transition:border-color .2s,background .2s}
-.contact-lines a:hover{border-color:var(--blue-light);background:rgba(62,139,224,.1)}
-.contact-lines svg{width:20px;height:20px;flex:none;color:var(--blue-light)}
-.contact-lines small{display:block;font-weight:400;font-size:.8rem;color:var(--on-dark-soft)}
-.audit-note{margin-top:20px;font-size:.88rem;color:var(--on-dark-soft);position:relative}
+/* Tarjetas genéricas */
+.card{background:#fff;border:1px solid var(--line-light);border-radius:var(--radius);padding:30px 28px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--blue)}
+@media (prefers-reduced-motion:reduce){.card:hover{transform:none}}
 
-/* Services */
-.services{margin-top:64px;border-top:1px solid var(--line-light)}
-.service{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:36px 0;border-bottom:1px solid var(--line-light)}
-.service-name{grid-column:1/5;display:flex;gap:16px;align-items:flex-start}
-.service-name svg{width:22px;height:22px;flex:none;color:var(--blue);margin-top:5px}
-.service-name h3{font-size:1.3rem}
-.service-body{grid-column:5/13;display:grid;grid-template-columns:1.25fr 1fr;gap:32px}
-.service-body p{color:var(--ink-soft);max-width:48ch}
-.service-body ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.93rem;color:var(--ink)}
-.service-body li{padding-left:18px;position:relative}
-.service-body li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-left:2px solid var(--blue);border-top:2px solid var(--blue);transform:rotate(135deg)}
+/* Dolor */
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
+.pain{display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start;background:var(--red-bg);border:1px solid rgba(192,57,59,.16);border-radius:var(--radius);padding:26px 26px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s}
+.pain:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(192,57,59,.5);border-color:var(--red)}
+.pain-icon{width:44px;height:44px;border-radius:12px;background:#fff;color:var(--red);display:flex;align-items:center;justify-content:center;border:1px solid rgba(192,57,59,.16)}
+.pain-icon svg{width:22px;height:22px}
+.pain p{font-family:var(--display);font-weight:500;font-size:1.12rem;line-height:1.35;letter-spacing:-.01em;color:var(--ink)}
+.pain p b{font-weight:500;color:var(--red)}
+.pain-bridge{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line-light)}
+.pain-bridge p{font-family:var(--display);font-size:clamp(1.15rem,1.9vw,1.5rem);max-width:30ch;line-height:1.3}
+@media (prefers-reduced-motion:reduce){.pain:hover{transform:none}}
 
-/* Principles */
-.principles{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 64px;margin-top:56px}
-.principle{padding-top:22px;border-top:1px solid var(--line-dark)}
-.principle h3{font-size:1.25rem;color:var(--on-dark)}
+/* Auditoría: pasos en círculos unidos por flechas */
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.step{position:relative;padding-right:28px}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--blue-deep);color:#fff;font-family:var(--display);font-weight:500;font-size:1.1rem;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.step:not(:last-child)::before{content:"";position:absolute;left:60px;right:-6px;top:23px;height:2px;background:var(--blue-light)}
+.step:not(:last-child)::after{content:"";position:absolute;right:-4px;top:18px;width:10px;height:10px;border-top:2px solid var(--blue);border-right:2px solid var(--blue);transform:rotate(45deg)}
+.step h3{margin-top:22px;font-size:1.2rem}
+.step p{margin-top:10px;color:var(--ink-soft);max-width:36ch}
+.audit-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin-top:56px;align-items:stretch}
+.audit-result{grid-column:1/8;background:var(--green-bg);border:1px solid rgba(31,138,91,.2);border-radius:var(--radius);padding:30px 30px}
+.audit-result h3{color:var(--green);font-size:1.15rem}
+.audit-result ul{display:grid;gap:12px;margin-top:18px}
+.audit-result li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;color:var(--ink)}
+.audit-result li svg{width:22px;height:22px;color:var(--green);margin-top:2px}
+.audit-cta{grid-column:8/13;background:var(--navy);color:var(--on-dark);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
+.audit-cta::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(62,139,224,.35),transparent 70%)}
+.audit-cta h3{font-size:1.15rem;position:relative}
+.audit-cta p{margin-top:10px;color:var(--on-dark-soft);font-size:.95rem;position:relative}
+.audit-cta .btn{position:relative;align-self:flex-start}
+
+/* Servicios */
+.sv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
+.sv-head{display:flex;gap:16px;align-items:center}
+.sv-icon{width:46px;height:46px;flex:none;border-radius:12px;background:var(--ice);color:var(--blue-deep);display:flex;align-items:center;justify-content:center}
+.sv-icon svg{width:24px;height:24px}
+.sv h3{font-size:1.25rem}
+.sv p{margin-top:18px;color:var(--ink-soft)}
+.sv ul{margin-top:18px;display:grid;gap:8px;font-size:.93rem;color:var(--ink)}
+.sv li{padding-left:18px;position:relative}
+.sv li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-left:2px solid var(--blue);border-top:2px solid var(--blue);transform:rotate(135deg)}
+.sv-extra{display:flex;align-items:flex-start;gap:14px;margin-top:28px;padding:20px 24px;border:1px dashed var(--line-light);border-radius:12px;color:var(--ink-soft);font-size:.97rem}
+.sv-extra svg{width:22px;height:22px;flex:none;color:var(--blue);margin-top:2px}
+
+/* Método */
+.principles{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 64px;margin-top:52px}
+.principle{padding-top:22px;border-top:1px solid var(--line-dark);position:relative}
+.principle::before{content:attr(data-n);font-family:var(--display);font-size:.85rem;letter-spacing:.08em;color:var(--blue-light)}
+.principle h3{margin-top:10px;font-size:1.25rem;color:var(--on-dark)}
 .principle p{margin-top:10px;color:var(--on-dark-soft);max-width:44ch}
 
-/* Experiencia en cifras */
-.figures{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:64px}
-.figure{padding-top:22px;border-top:2px solid var(--blue)}
-.figure b{display:block;font-family:var(--display);font-weight:300;font-size:clamp(3.2rem,6vw,5.4rem);line-height:.95;letter-spacing:-.04em;color:var(--ink)}
-.figure span{display:block;margin-top:14px;font-size:.98rem;color:var(--ink-soft);max-width:22ch}
-.figure span strong{display:block;font-weight:500;color:var(--ink)}
-.figures-note{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:64px}
-.figures-note p{grid-column:1/8;color:var(--ink-soft);max-width:60ch}
-.figures-note .sectors{grid-column:9/13;margin:0;padding:0;list-style:none;font-size:.95rem;color:var(--ink);display:grid;gap:8px;align-content:start}
-.figures-note .sectors li{padding:0 0 8px;border-bottom:1px solid var(--line-light)}
+/* Equipo */
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
+.member{display:grid;grid-template-columns:116px 1fr;gap:24px;align-items:start}
+/* .avatar se aplica igual a un <div> (placeholder con iniciales) y a un <img> (foto real) */
+.avatar{width:116px;height:116px;border-radius:16px;background:var(--navy);object-fit:cover;position:relative;overflow:hidden;flex:none}
+div.avatar::before{content:attr(data-initials);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:400;font-size:2.6rem;letter-spacing:-.02em;color:var(--on-dark)}
+div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:42%;background:var(--blue)}
+.member h3{font-size:1.3rem}
+.member .role{display:block;margin-top:6px;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-deep)}
+.member p{margin-top:14px;color:var(--ink-soft)}
 
-/* Contact */
-.contact{position:relative;overflow:hidden}
-.contact::before{content:"";position:absolute;left:55%;top:-30%;width:70vw;height:160%;background:radial-gradient(ellipse at center,rgba(62,139,224,.22),transparent 60%);pointer-events:none}
-.contact .wrap{position:relative}
-.contact-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:52px}
-.contact-big{grid-column:1/8;display:grid;gap:14px}
-.contact-big a{display:block;font-family:var(--display);font-weight:300;font-size:clamp(1.5rem,3.2vw,2.6rem);letter-spacing:-.02em;color:var(--on-dark);padding:18px 0;border-bottom:1px solid var(--line-dark);transition:color .2s}
-.contact-big a:hover{color:var(--blue-light)}
-.contact-big small{display:block;font-family:var(--body);font-size:.9rem;letter-spacing:0;color:var(--on-dark-soft);margin-bottom:4px}
-.contact-side{grid-column:9/13;color:var(--on-dark-soft);font-size:.97rem;display:grid;gap:18px;align-content:start;padding-top:18px}
-.contact-side strong{display:block;color:var(--on-dark);font-weight:500}
+/* Contacto */
+.contact{overflow:hidden}
+.contact::after{content:"";position:absolute;left:55%;top:-30%;width:70vw;height:160%;background:radial-gradient(ellipse at center,rgba(62,139,224,.2),transparent 60%);pointer-events:none}
+.contact .wrap{position:relative;z-index:1}
+.contact-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin-top:52px}
+.form-card{grid-column:1/8;background:#fff;color:var(--ink);border-radius:16px;padding:clamp(24px,3vw,36px);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.field{display:grid;gap:7px;align-content:start}
+.field-full{grid-column:1/-1}
+.field label{font-weight:500;font-size:.95rem}
+.field label small{font-weight:400;color:var(--ink-soft)}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--ice);border:1px solid var(--line-light);border-radius:8px;padding:12px 14px;transition:border-color .2s,box-shadow .2s,background .2s}
+.field textarea{min-height:124px;resize:vertical}
+.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%234A5A70' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px;padding-right:40px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(62,139,224,.22)}
+.field input:user-invalid,.field select:user-invalid,.field textarea:user-invalid{border-color:var(--red)}
+.consent{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:start;font-size:.9rem;color:var(--ink-soft)}
+.consent input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--blue);cursor:pointer}
+.consent a{color:var(--blue-deep);text-decoration:underline}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:22px}
+.form-foot .btn[disabled]{opacity:.6;cursor:progress;transform:none;box-shadow:none}
+.form-foot small{color:var(--ink-soft);font-size:.85rem}
+.form-status{display:none;margin-top:18px;padding:14px 16px;border-radius:10px;font-size:.95rem;line-height:1.5}
+.form-status.show{display:block}
+.form-status.ok{background:var(--green-bg);color:#14593B;border:1px solid rgba(31,138,91,.25)}
+.form-status.err{background:var(--red-bg);color:#8E2628;border:1px solid rgba(192,57,59,.25)}
+.form-status.info{background:var(--ice);color:var(--ink-soft);border:1px solid var(--line-light)}
+.form-status a{text-decoration:underline;font-weight:500}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.contact-side{grid-column:8/13;display:grid;gap:28px;align-content:start;padding-top:8px}
+.contact-side h3{font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light)}
+.alt-lines{display:grid;gap:10px;margin-top:14px}
+.alt-lines a{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line-dark);border-radius:10px;font-weight:500;color:var(--on-dark);transition:border-color .2s,background .2s}
+.alt-lines a:hover{border-color:var(--blue-light);background:rgba(62,139,224,.1)}
+.alt-lines svg{width:22px;height:22px;flex:none;color:var(--blue-light)}
+.alt-lines small{display:block;font-weight:400;font-size:.8rem;color:var(--on-dark-soft)}
+.contact-side p{margin-top:10px;color:var(--on-dark-soft);font-size:.97rem}
+.contact-side p strong{display:block;color:var(--on-dark);font-weight:500}
 
 /* Footer */
 .footer{background:var(--navy-900);border-top:1px solid var(--line-dark);padding-block:36px;font-size:.88rem;color:var(--on-dark-soft)}
 .footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
-.footer .logo{width:130px}
+.footer .logo{width:130px;color:var(--on-dark)}
 .footer nav{display:flex;flex-wrap:wrap;gap:20px}
 .footer a:hover{color:var(--on-dark)}
 
+/* ---------- Aparición al hacer scroll ---------- */
+.js [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js [data-reveal].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js [data-reveal]{opacity:1;transform:none;transition:none}}
+
 /* ---------- Responsive ---------- */
 @media (max-width:1000px){
-  .hero-copy{grid-column:1/11}
-  .head h2,.head .lede{grid-column:1/12}
-  .steps{grid-column:1/13}
-  .audit-card{grid-column:1/13;max-width:560px}
-  .service-name{grid-column:1/13}
-  .service-body{grid-column:1/13}
-  .figures{grid-template-columns:repeat(2,1fr)}
-  .figures-note p,.figures-note .sectors{grid-column:1/13}
-  .contact-big{grid-column:1/13}
-  .contact-side{grid-column:1/13;grid-template-columns:repeat(2,1fr)}
+  .hero-grid{gap:40px}
+  .hero-copy{grid-column:1/13}
+  .hero-visual{grid-column:1/13;max-width:600px}
+  .head > *{grid-column:1/12}
+  .audit-result,.audit-cta{grid-column:1/13}
+  .form-card,.contact-side{grid-column:1/13}
 }
 @media (max-width:820px){
   .nav,.header .btn-primary{display:none}
@@ -201,17 +284,35 @@ h3{font-weight:500;letter-spacing:-.01em;line-height:1.25}
   .header .wrap{gap:14px}
   .logo{width:132px}
   .lang{margin-left:0}
-  .header.open .nav{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--navy-900);border-bottom:1px solid var(--line-dark);padding:8px var(--gutter) 16px}
-  .header.open .nav a{padding:14px 0;border-top:1px solid var(--line-dark);font-size:1.05rem;color:var(--on-dark)}
-  .header.open .nav .nav-cta{margin-top:12px;color:var(--blue-light)}
-  .hero-copy{grid-column:1/13}
-  .hero .wrap{padding-block:64px 88px}
-  .service-body{grid-template-columns:1fr;gap:18px}
-  .principles{grid-template-columns:1fr;gap:24px}
-  .figures{grid-template-columns:1fr 1fr;gap:28px 20px}
-  .contact-side{grid-template-columns:1fr}
-  .step{grid-template-columns:48px 1fr}
-  .step::before{font-size:2rem}
+  .header.open .nav{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line-light);padding:8px var(--gutter) 16px;box-shadow:var(--shadow)}
+  .header.open .nav a{padding:14px 0;border-top:1px solid var(--line-light);font-size:1.05rem;color:var(--ink)}
+  .header.open .nav .nav-cta{margin-top:12px;color:var(--blue-deep);font-weight:500}
+  .hero .wrap{padding-block:52px 64px}
+  .hero h1{max-width:none}
+  /* En móvil las rejillas de 12 columnas pasan a una sola: con 11 huecos superarían el ancho de pantalla */
+  .hero-grid,.head,.audit-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-grid>*,.head>*,.audit-grid>*,.contact-grid>*{grid-column:auto}
+  .hero-grid{gap:40px}
+  .pain-grid,.sv-grid,.team-grid,.principles{grid-template-columns:1fr}
+  .principles{gap:24px}
+  .steps-row{grid-template-columns:1fr;gap:36px}
+  .step{padding-right:0;display:grid;grid-template-columns:48px 1fr;gap:4px 18px;align-items:start}
+  .step-num{grid-row:1/3}
+  .step h3{margin-top:10px}
+  .step p{margin-top:4px;max-width:none}
+  .step:not(:last-child)::before{left:23px;right:auto;top:56px;bottom:-30px;width:2px;height:auto}
+  .step:not(:last-child)::after{left:19px;right:auto;top:auto;bottom:-24px;transform:rotate(135deg)}
+  .form-grid{grid-template-columns:1fr}
+  .form-foot .btn{width:100%}
+  .compare{padding:22px 20px 18px}
+}
+@media (max-width:480px){
+  .member{grid-template-columns:1fr;gap:18px}
+  .avatar{width:96px;height:96px}
+  div.avatar::before{font-size:2.2rem}
+  .pain{grid-template-columns:1fr;gap:14px}
+  .compare-head{flex-direction:column;gap:6px}
+  .hero-actions .btn{width:100%}
 }
 @media (min-width:821px){.nav-cta{display:none}}
 </style>
@@ -219,208 +320,246 @@ h3{font-weight:500;letter-spacing:-.01em;line-height:1.25}
 <body>
 <header class="header" id="top">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Leran AI, inicio"><svg class="logo-svg" viewBox="80 96 716 190" aria-hidden="true"><defs><filter id="glow-h" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path class="logo-letters" d="M90 104h14v79h66v14H90ZM218 104h80v13h-66v27h66v14h-66v26h66v13h-80ZM358 104h15v93h-15ZM373 104h45c23 0 42 12 42 31s-19 31-42 31h-29v-14h29c14 0 27-6 27-17s-13-17-27-17h-45ZM421 166h18l17 31h-18ZM679 104h14v93h-14Z M771 104h14v93h-14Z M679 104h20l86 93h-20Z"/><path fill="#3E8BE0" filter="url(#glow-h)" d="M560 104h19l46 94h-19l-36.5-76L533 198h-19Z"/><g fill="#3E8BE0" stroke="#3E8BE0"><line x1="90" y1="264" x2="189" y2="264" stroke-width="2"/><line x1="676" y1="264" x2="775" y2="264" stroke-width="2"/><text x="432.5" y="276" text-anchor="middle" stroke="none" font-family="Sora,sans-serif" font-weight="400" font-size="34" letter-spacing="7.5" textLength="430" lengthAdjust="spacingAndGlyphs">AI CONSULTING</text></g></svg></a>
-    <nav class="nav" aria-label="Principal">
+    <a class="logo" href="#top" aria-label="Leran AI Consulting, inicio"><svg class="logo-svg" viewBox="80 96 716 190" aria-hidden="true"><path class="logo-letters" d="M90 104h14v79h66v14H90ZM218 104h80v13h-66v27h66v14h-66v26h66v13h-80ZM358 104h15v93h-15ZM373 104h45c23 0 42 12 42 31s-19 31-42 31h-29v-14h29c14 0 27-6 27-17s-13-17-27-17h-45ZM421 166h18l17 31h-18ZM679 104h14v93h-14Z M771 104h14v93h-14Z M679 104h20l86 93h-20Z"/><path fill="#3E8BE0" d="M560 104h19l46 94h-19l-36.5-76L533 198h-19Z"/><g fill="#3E8BE0" stroke="#3E8BE0"><line x1="90" y1="264" x2="189" y2="264" stroke-width="2"/><line x1="676" y1="264" x2="775" y2="264" stroke-width="2"/><text x="432.5" y="276" text-anchor="middle" stroke="none" font-family="Sora,sans-serif" font-weight="400" font-size="34" letter-spacing="7.5" textLength="430" lengthAdjust="spacingAndGlyphs">AI CONSULTING</text></g></svg></a>
+    <nav class="nav" id="menu" aria-label="Principal">
       <a href="#auditoria" data-i18n="nav.audit">Auditoría gratuita</a>
       <a href="#servicios" data-i18n="nav.services">Servicios</a>
-      <a href="#experiencia" data-i18n="nav.projects">Experiencia</a>
+      <a href="#equipo" data-i18n="nav.team">Quién está detrás</a>
       <a href="#contacto" data-i18n="nav.contact">Contacto</a>
-      <a href="mailto:consulting@leranai.com?subject=Auditor%C3%ADa%20gratuita" class="nav-cta" data-i18n="cta.audit">Pedir auditoría gratuita</a>
+      <a href="#contacto" class="nav-cta" data-i18n="cta.audit">Pide tu auditoría gratuita</a>
     </nav>
     <div class="lang" role="group" aria-label="Idioma / Language">
       <button type="button" data-lang="es" aria-pressed="true">ES</button>
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
-    <a class="btn btn-primary" href="mailto:consulting@leranai.com?subject=Auditor%C3%ADa%20gratuita" data-i18n="cta.audit">Pedir auditoría gratuita</a>
+    <a class="btn btn-primary" href="#contacto" data-i18n="cta.audit">Pide tu auditoría gratuita</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menú"><span></span></button>
   </div>
 </header>
 
 <main>
+  <!-- ========== HERO ========== -->
   <section class="hero">
-    <canvas id="flow" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
-          <h1 data-i18n="hero.h1">Inteligencia artificial a medida para los procesos que ya tienes.</h1>
-          <p data-i18n="hero.p">Automatizamos las tareas repetitivas de tu negocio y construimos el software que no encuentras en el mercado. Empezamos siempre igual: con una auditoría gratuita y sin compromiso en la que localizamos dónde se pierde tiempo y dinero.</p>
+          <span class="eyebrow" data-i18n="hero.eyebrow">Automatización e IA para pymes y empresas</span>
+          <h1 data-i18n="hero.h1">Recupera las horas que tu equipo pierde en tareas que no aportan.</h1>
+          <!-- Titular alternativo, listo para cambiar (recuerda actualizar también EN['hero.h1'] en el script):
+               <h1 data-i18n="hero.h1">Tu empresa, sin el trabajo manual que la frena.</h1> -->
+          <p data-i18n="hero.p">Automatizamos con inteligencia artificial las tareas repetitivas de tu negocio y construimos el software que no encuentras en el mercado. Empezamos siempre igual: con una auditoría gratuita y sin compromiso.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:consulting@leranai.com?subject=Auditor%C3%ADa%20gratuita" data-i18n="cta.audit">Pedir auditoría gratuita</a>
-            <a class="btn btn-ghost" href="#servicios" data-i18n="cta.projects">Ver servicios</a>
+            <a class="btn btn-primary" href="#contacto" data-i18n="cta.audit">Pide tu auditoría gratuita</a>
+            <a class="btn btn-light" href="#servicios" data-i18n="cta.services">Ver servicios</a>
           </div>
           <div class="hero-contact">
             <a href="mailto:consulting@leranai.com">consulting@leranai.com</a>
             <a href="tel:+34639819101">+34 639 819 101</a>
           </div>
         </div>
+        <div class="hero-visual">
+          <div class="compare" id="compare">
+            <div class="compare-head">
+              <h2 data-i18n="hero.cmp.h">Un proceso típico, antes y después</h2>
+              <span data-i18n="hero.cmp.tag">Tiempo del equipo</span>
+            </div>
+            <div class="hero-legend" aria-hidden="true">
+              <span><i></i><b style="font-weight:400" data-i18n="hero.legend1">Proceso manual</b></span>
+              <span><i class="on"></i><b style="font-weight:400" data-i18n="hero.legend2">Proceso automatizado</b></span>
+            </div>
+            <div class="compare-rows">
+              <div class="crow">
+                <b data-i18n="hero.cmp.r1">Registrar pedidos y facturas</b>
+                <div class="bar" aria-hidden="true"><i style="--w:100%;--d:.2s"></i></div>
+                <div class="bar on" aria-hidden="true"><i style="--w:22%;--d:.35s"></i></div>
+              </div>
+              <div class="crow">
+                <b data-i18n="hero.cmp.r2">Pasar datos de un programa a otro</b>
+                <div class="bar" aria-hidden="true"><i style="--w:92%;--d:.45s"></i></div>
+                <div class="bar on" aria-hidden="true"><i style="--w:8%;--d:.6s"></i></div>
+              </div>
+              <div class="crow">
+                <b data-i18n="hero.cmp.r3">Preparar el informe semanal</b>
+                <div class="bar" aria-hidden="true"><i style="--w:84%;--d:.7s"></i></div>
+                <div class="bar on" aria-hidden="true"><i style="--w:14%;--d:.85s"></i></div>
+              </div>
+              <div class="crow">
+                <b data-i18n="hero.cmp.r4">Responder consultas repetidas</b>
+                <div class="bar" aria-hidden="true"><i style="--w:76%;--d:.95s"></i></div>
+                <div class="bar on" aria-hidden="true"><i style="--w:28%;--d:1.1s"></i></div>
+              </div>
+            </div>
+            <p class="compare-note" data-i18n="hero.cmp.note">Esquema orientativo. Las cifras reales de tu negocio salen de la auditoría.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="hero-legend" aria-hidden="true">
-      <span><i></i><b data-i18n="hero.legend1" style="font-weight:400">Proceso manual</b></span>
-      <span><i class="on"></i><b data-i18n="hero.legend2" style="font-weight:400">Proceso automatizado</b></span>
     </div>
   </section>
 
-  <section class="section section-light" id="auditoria">
+  <!-- ========== 01 · EL PROBLEMA ========== -->
+  <section class="section section-ice" id="problema">
     <div class="wrap">
-      <div class="head">
+      <div class="head" data-reveal>
+        <div class="sec-mark"><b>01</b><span data-i18n="pain.mark">El problema</span></div>
+        <h2 data-i18n="pain.h2">¿Te suena alguna de estas?</h2>
+        <p class="lede" data-i18n="pain.lede">No hace falta que tu empresa sea grande para perder horas cada semana. Basta con que el trabajo dependa de copiar, revisar y perseguir.</p>
+      </div>
+      <div class="pain-grid" data-reveal-group>
+        <div class="pain" data-reveal>
+          <div class="pain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="11" height="11" rx="2"/><rect x="10" y="10" width="11" height="11" rx="2"/></svg></div>
+          <p data-i18n="pain.1">Copiáis datos a mano de un programa a otro.</p>
+        </div>
+        <div class="pain" data-reveal>
+          <div class="pain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><path d="m17 5 4-2M17 9l4 2"/></svg></div>
+          <p data-i18n="pain.2">Hay procesos que solo sabe hacer una persona. Si se va de vacaciones, se para.</p>
+        </div>
+        <div class="pain" data-reveal>
+          <div class="pain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <p data-i18n="pain.3">Los informes llegan tarde y, cuando llegan, ya no sirven para decidir.</p>
+        </div>
+        <div class="pain" data-reveal>
+          <div class="pain-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><path d="m18 16 2 2 3-3"/></svg></div>
+          <p data-i18n="pain.4">Cada pedido o factura pasa por demasiadas manos.</p>
+        </div>
+      </div>
+      <div class="pain-bridge" data-reveal>
+        <p data-i18n="pain.bridge">Si has reconocido alguna, hay horas que recuperar. La auditoría gratuita te dice cuántas.</p>
+        <a class="btn btn-primary" href="#contacto" data-i18n="cta.audit">Pide tu auditoría gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 02 · LA AUDITORÍA ========== -->
+  <section class="section section-white" id="auditoria">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="sec-mark"><b>02</b><span data-i18n="audit.mark">La auditoría</span></div>
         <h2 data-i18n="audit.h2">Primero encontramos el problema. Después hablamos de precio.</h2>
         <p class="lede" data-i18n="audit.lede">La auditoría es gratuita y sin compromiso. Revisamos cómo trabaja hoy tu equipo, medimos cuánto tiempo se va en tareas que una máquina puede hacer y te decimos, con claridad, qué merece la pena automatizar y qué no.</p>
       </div>
-      <div class="audit-grid">
-        <ol class="steps" style="list-style:none;margin:0;padding:0">
-          <li class="step">
-            <div>
-              <h3 data-i18n="audit.s1h">Nos escribes</h3>
-              <p data-i18n="audit.s1p">Un correo o una llamada bastan. Nos cuentas qué hace tu negocio y qué parte del trabajo te quita más tiempo.</p>
-            </div>
-          </li>
-          <li class="step">
-            <div>
-              <h3 data-i18n="audit.s2h">Analizamos tus procesos</h3>
-              <p data-i18n="audit.s2p">Una o dos sesiones con las personas que hacen el trabajo cada día. Sin instalar nada y sin interrumpir la actividad.</p>
-            </div>
-          </li>
-          <li class="step">
-            <div>
-              <h3 data-i18n="audit.s3h">Te entregamos el diagnóstico</h3>
-              <p data-i18n="audit.s3p">Un informe breve con los puntos donde se pierde tiempo y dinero, qué automatizar primero y un presupuesto cerrado. Si no hay nada que mejorar, también te lo decimos.</p>
-            </div>
-          </li>
-        </ol>
-        <aside class="audit-card">
-          <h3 data-i18n="audit.cardh">Pide tu auditoría gratuita</h3>
-          <p data-i18n="audit.cardp">Sin compromiso y sin letra pequeña. Respondemos en menos de un día laborable.</p>
-          <div class="contact-lines">
-            <a href="mailto:consulting@leranai.com?subject=Auditor%C3%ADa%20gratuita">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              <span>consulting@leranai.com<small data-i18n="audit.mail">Correo electrónico</small></span>
-            </a>
-            <a href="tel:+34639819101">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-              <span>+34 639 819 101<small data-i18n="audit.phone">Teléfono y WhatsApp</small></span>
-            </a>
+      <ol class="steps-row" data-reveal-group>
+        <li class="step" data-reveal>
+          <div class="step-num" aria-hidden="true">1</div>
+          <h3 data-i18n="audit.s1h">Nos escribes</h3>
+          <p data-i18n="audit.s1p">Rellenas el formulario o nos mandas un correo. Nos cuentas qué hace tu negocio y qué parte del trabajo te quita más tiempo.</p>
+        </li>
+        <li class="step" data-reveal>
+          <div class="step-num" aria-hidden="true">2</div>
+          <h3 data-i18n="audit.s2h">Analizamos tus procesos</h3>
+          <p data-i18n="audit.s2p">Una o dos sesiones con las personas que hacen el trabajo cada día. Sin instalar nada y sin interrumpir la actividad.</p>
+        </li>
+        <li class="step" data-reveal>
+          <div class="step-num" aria-hidden="true">3</div>
+          <h3 data-i18n="audit.s3h">Te entregamos el diagnóstico</h3>
+          <p data-i18n="audit.s3p">Un informe breve con lo que merece la pena automatizar y un presupuesto cerrado. Si no hay nada que mejorar, también te lo decimos.</p>
+        </li>
+      </ol>
+      <div class="audit-grid" data-reveal-group>
+        <div class="audit-result" data-reveal>
+          <h3 data-i18n="audit.rh">Qué te llevas de la auditoría</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span data-i18n="audit.r1">Un informe breve con los puntos donde se pierde tiempo y dinero.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span data-i18n="audit.r2">Qué automatizar primero y qué no merece la pena tocar.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span data-i18n="audit.r3">Un presupuesto cerrado. Los cambios de alcance se acuerdan antes, no se facturan después.</span></li>
+          </ul>
+        </div>
+        <aside class="audit-cta" data-reveal>
+          <div>
+            <h3 data-i18n="audit.cardh">Sin coste y sin compromiso</h3>
+            <p data-i18n="audit.cardp">Respondemos en menos de un día laborable. Atendemos en español e inglés, en España y en Qatar.</p>
           </div>
-          <p class="audit-note" data-i18n="audit.note">Atendemos en español e inglés, en España y en Qatar.</p>
+          <a class="btn btn-primary" href="#contacto" data-i18n="cta.audit">Pide tu auditoría gratuita</a>
         </aside>
       </div>
     </div>
   </section>
 
-  <section class="section section-light" id="servicios" style="padding-top:0">
+  <!-- ========== 03 · SERVICIOS ========== -->
+  <section class="section section-ice" id="servicios">
     <div class="wrap">
-      <div class="head">
+      <div class="head" data-reveal>
+        <div class="sec-mark"><b>03</b><span data-i18n="services.mark">Servicios</span></div>
         <h2 data-i18n="services.h2">Lo que construimos</h2>
         <p class="lede" data-i18n="services.lede">Cada negocio pierde tiempo en sitios distintos. Por eso no vendemos un producto cerrado: diseñamos la solución sobre las herramientas que ya usas y la ajustamos a cómo trabaja tu equipo.</p>
       </div>
-      <div class="services">
-        <article class="service">
-          <div class="service-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h6M4 12h10M4 17h6"/><path d="M14 7h6M18 12h2M14 17h6"/><circle cx="12" cy="7" r="1.6" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="17" r="1.6" fill="currentColor" stroke="none"/></svg>
+      <div class="sv-grid" data-reveal-group>
+        <article class="card sv" data-reveal>
+          <div class="sv-head">
+            <div class="sv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h6M4 12h10M4 17h6"/><path d="M14 7h6M18 12h2M14 17h6"/><circle cx="12" cy="7" r="1.6" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="17" r="1.6" fill="currentColor" stroke="none"/></svg></div>
             <h3 data-i18n="sv1.h">Automatización de procesos</h3>
           </div>
-          <div class="service-body">
-            <p data-i18n="sv1.p">Facturación, pedidos, conciliaciones, informes, avisos. Conectamos las herramientas que ya usas (correo, Excel, ERP, WhatsApp) para que el trabajo repetitivo se haga solo y tu equipo dedique el tiempo a lo que sí requiere criterio.</p>
-            <ul>
-              <li data-i18n="sv1.l1">Lectura automática de facturas y albaranes</li>
-              <li data-i18n="sv1.l2">Pedidos que entran solos al sistema</li>
-              <li data-i18n="sv1.l3">Informes que se generan y se envían cada semana</li>
-            </ul>
-          </div>
+          <p data-i18n="sv1.p">Facturación, pedidos, conciliaciones, informes, avisos. Hacemos que el trabajo repetitivo se haga solo y conectamos tu CRM, tu ERP y tu correo para que un dato se introduzca una sola vez y aparezca donde tiene que aparecer.</p>
+          <ul>
+            <li data-i18n="sv1.l1">Lectura automática de facturas y albaranes</li>
+            <li data-i18n="sv1.l2">Pedidos que entran solos al sistema</li>
+            <li data-i18n="sv1.l3">CRM, ERP, tienda online y correo sincronizados</li>
+          </ul>
         </article>
-        <article class="service">
-          <div class="service-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>
+        <article class="card sv" data-reveal>
+          <div class="sv-head">
+            <div class="sv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></div>
             <h3 data-i18n="sv2.h">Software a medida</h3>
           </div>
-          <div class="service-body">
-            <p data-i18n="sv2.p">Para cuando la herramienta que necesitas no existe, o la que hay te obliga a trabajar como ella quiere. Aplicaciones internas, paneles de control y portales para clientes, construidos alrededor de tu forma de trabajar.</p>
-            <ul>
-              <li data-i18n="sv2.l1">Aplicaciones internas de gestión</li>
-              <li data-i18n="sv2.l2">Portales de cliente y de proveedor</li>
-              <li data-i18n="sv2.l3">Herramientas que sustituyen hojas de cálculo compartidas</li>
-            </ul>
-          </div>
+          <p data-i18n="sv2.p">Para cuando la herramienta que necesitas no existe, o la que hay te obliga a trabajar como ella quiere. Aplicaciones internas, paneles de control y portales para clientes, construidos alrededor de tu forma de trabajar.</p>
+          <ul>
+            <li data-i18n="sv2.l1">Aplicaciones internas de gestión</li>
+            <li data-i18n="sv2.l2">Portales de cliente y de proveedor</li>
+            <li data-i18n="sv2.l3">Herramientas que sustituyen hojas de cálculo compartidas</li>
+          </ul>
         </article>
-        <article class="service">
-          <div class="service-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M10 11h.01M14 11h.01M10 14h4"/></svg>
+        <article class="card sv" data-reveal>
+          <div class="sv-head">
+            <div class="sv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M10 11h.01M14 11h.01M10 14h4"/></svg></div>
             <h3 data-i18n="sv3.h">Agentes y asistentes de IA</h3>
           </div>
-          <div class="service-body">
-            <p data-i18n="sv3.p">Asistentes que atienden, clasifican y responden usando tus datos, no los de internet. Atención al cliente, cualificación de contactos, búsqueda en tu documentación interna, redacción de documentos a partir de plantillas.</p>
-            <ul>
-              <li data-i18n="sv3.l1">Asistentes por WhatsApp y web con tu información</li>
-              <li data-i18n="sv3.l2">Clasificación y respuesta automática del correo</li>
-              <li data-i18n="sv3.l3">Buscador interno sobre tus manuales y contratos</li>
-            </ul>
-          </div>
+          <p data-i18n="sv3.p">Asistentes que atienden, clasifican y responden usando tus datos, no los de internet. Atención al cliente, cualificación de contactos, búsqueda en tu documentación interna, redacción de documentos a partir de plantillas.</p>
+          <ul>
+            <li data-i18n="sv3.l1">Asistentes por WhatsApp y web con tu información</li>
+            <li data-i18n="sv3.l2">Clasificación y respuesta automática del correo</li>
+            <li data-i18n="sv3.l3">Buscador interno sobre tus manuales y contratos</li>
+          </ul>
         </article>
-        <article class="service">
-          <div class="service-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
+        <article class="card sv" data-reveal>
+          <div class="sv-head">
+            <div class="sv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
             <h3 data-i18n="sv4.h">Datos e informes</h3>
           </div>
-          <div class="service-body">
-            <p data-i18n="sv4.p">Unificamos fuentes dispersas (ventas, stock, contabilidad, marketing) en un cuadro de mando que responde en segundos a las preguntas que hoy tardas horas en contestar.</p>
-            <ul>
-              <li data-i18n="sv4.l1">Cuadros de mando de ventas y operaciones</li>
-              <li data-i18n="sv4.l2">Alertas cuando un dato se sale de lo normal</li>
-              <li data-i18n="sv4.l3">Previsiones de demanda y de tesorería</li>
-            </ul>
-          </div>
-        </article>
-        <article class="service">
-          <div class="service-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6h7M6 8.5v7M18 8.5v7M8.5 18h7"/></svg>
-            <h3 data-i18n="sv5.h">Integraciones</h3>
-          </div>
-          <div class="service-body">
-            <p data-i18n="sv5.p">Hacemos que tus sistemas se hablen entre sí: CRM, ERP, tienda online, contabilidad, calendarios, pasarelas de pago. Un dato se introduce una sola vez y aparece donde tiene que aparecer.</p>
-            <ul>
-              <li data-i18n="sv5.l1">Sincronización entre tienda online y almacén</li>
-              <li data-i18n="sv5.l2">Conexión de reservas, calendario y facturación</li>
-              <li data-i18n="sv5.l3">Migraciones y limpieza de datos</li>
-            </ul>
-          </div>
-        </article>
-        <article class="service">
-          <div class="service-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-            <h3 data-i18n="sv6.h">Webs y presencia digital</h3>
-          </div>
-          <div class="service-body">
-            <p data-i18n="sv6.p">Webs rápidas y cuidadas para negocios que necesitan estar en el mapa: reservas, catálogo, contacto directo por WhatsApp y posicionamiento local. Diseñadas para convertir visitas en clientes, no para ganar premios.</p>
-            <ul>
-              <li data-i18n="sv6.l1">Webs de escaparate con reservas y contacto directo</li>
-              <li data-i18n="sv6.l2">Catálogos y cartas digitales</li>
-              <li data-i18n="sv6.l3">Ficha de Google y posicionamiento local</li>
-            </ul>
-          </div>
+          <p data-i18n="sv4.p">Unificamos fuentes dispersas (ventas, stock, contabilidad, marketing) en un cuadro de mando que responde en segundos a las preguntas que hoy tardas horas en contestar.</p>
+          <ul>
+            <li data-i18n="sv4.l1">Cuadros de mando de ventas y operaciones</li>
+            <li data-i18n="sv4.l2">Alertas cuando un dato se sale de lo normal</li>
+            <li data-i18n="sv4.l3">Previsiones de demanda y de tesorería</li>
+          </ul>
         </article>
       </div>
+      <p class="sv-extra" data-reveal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <span data-i18n="services.web">También diseñamos webs rápidas para negocios que quieren verse tan bien como trabajan.</span>
+      </p>
     </div>
   </section>
 
+  <!-- ========== 04 · MÉTODO ========== -->
   <section class="section section-dark" id="metodo">
     <div class="wrap">
-      <div class="head">
+      <div class="head" data-reveal>
+        <div class="sec-mark"><b>04</b><span data-i18n="how.mark">Método</span></div>
         <h2 data-i18n="how.h2">Cómo trabajamos</h2>
       </div>
-      <div class="principles">
-        <div class="principle">
+      <div class="principles" data-reveal-group>
+        <div class="principle" data-n="01" data-reveal>
           <h3 data-i18n="how.1h">Prototipo en días, no en meses</h3>
           <p data-i18n="how.1p">Antes de comprometer un desarrollo largo, montamos una versión mínima con tus datos reales. Si no resuelve el problema, lo sabemos pronto y barato.</p>
         </div>
-        <div class="principle">
+        <div class="principle" data-n="02" data-reveal>
           <h3 data-i18n="how.2h">Sobre lo que ya usas</h3>
           <p data-i18n="how.2p">No te cambiamos de herramientas. Construimos encima de tu correo, tu Excel, tu ERP y tu WhatsApp, para que nadie tenga que aprender un sistema nuevo.</p>
         </div>
-        <div class="principle">
+        <div class="principle" data-n="03" data-reveal>
           <h3 data-i18n="how.3h">Tú eres el dueño</h3>
           <p data-i18n="how.3p">El código, los datos y los accesos son tuyos desde el primer día. No pagas licencias por usar lo que hemos construido para ti.</p>
         </div>
-        <div class="principle">
+        <div class="principle" data-n="04" data-reveal>
           <h3 data-i18n="how.4h">Presupuesto cerrado</h3>
           <p data-i18n="how.4p">Tras la auditoría sabes exactamente qué se va a construir, cuánto cuesta y cuándo estará. Los cambios de alcance se acuerdan antes, no se facturan después.</p>
         </div>
@@ -428,47 +567,124 @@ h3{font-weight:500;letter-spacing:-.01em;line-height:1.25}
     </div>
   </section>
 
-  <section class="section section-light" id="experiencia">
+  <!-- ========== 05 · QUIÉN ESTÁ DETRÁS ========== -->
+  <section class="section section-white" id="equipo">
     <div class="wrap">
-      <div class="head">
-        <h2 data-i18n="xp.h2">Experiencia</h2>
-        <p class="lede" data-i18n="xp.lede">Lo que hemos hecho hasta hoy, en cifras. Sin nombres ni casos de éxito adornados: los proyectos afectan a procesos internos de nuestros clientes y preferimos que sean ellos quienes los cuenten.</p>
+      <div class="head" data-reveal>
+        <div class="sec-mark"><b>05</b><span data-i18n="team.mark">Quién está detrás</span></div>
+        <h2 data-i18n="team.h2">Dos personas. Sin intermediarios.</h2>
+        <p class="lede" data-i18n="team.lede">Hablas con quienes hacen el trabajo, desde la primera llamada hasta la entrega.</p>
       </div>
-      <div class="figures">
-        <div class="figure"><b>15</b><span><strong data-i18n="xp.f1h">proyectos ejecutados</strong><em style="font-style:normal" data-i18n="xp.f1p">entregados y en uso</em></span></div>
-        <div class="figure"><b>2</b><span><strong data-i18n="xp.f2h">países</strong><em style="font-style:normal" data-i18n="xp.f2p">España y Qatar, en español e inglés</em></span></div>
-        <div class="figure"><b>3</b><span><strong data-i18n="xp.f3h">áreas de trabajo</strong><em style="font-style:normal" data-i18n="xp.f3p">automatización, software e IA a medida, webs</em></span></div>
-        <div class="figure"><b>0</b><span><strong data-i18n="xp.f4h">licencias</strong><em style="font-style:normal" data-i18n="xp.f4p">el código y los datos son siempre del cliente</em></span></div>
-      </div>
-      <div class="figures-note">
-        <p data-i18n="xp.note">Si necesitas referencias antes de decidir, pídelas durante la auditoría: te pondremos en contacto con clientes de tu sector que ya trabajan con nosotros.</p>
-        <ul class="sectors" aria-label="Sectores">
-          <li data-i18n="xp.s1">Energía e instalaciones</li>
-          <li data-i18n="xp.s2">Distribución y logística</li>
-          <li data-i18n="xp.s3">Restauración y comercio</li>
-          <li data-i18n="xp.s4">Belleza y fitness</li>
-          <li data-i18n="xp.s5">Servicios profesionales</li>
-        </ul>
+      <!--
+        FOTOS REALES: cuando tengas las fotos, guárdalas en /team/adrian.jpg y /team/ricardo.jpg
+        (cuadradas, mínimo 400x400 px) y sustituye cada
+            <div class="avatar" data-initials="A" aria-hidden="true"></div>
+        por
+            <img class="avatar" src="team/adrian.jpg" alt="Adrián, socio de Leran AI" width="116" height="116" loading="lazy">
+        La clase .avatar ya está preparada para <img> (object-fit: cover). No hace falta tocar el CSS.
+      -->
+      <div class="team-grid" data-reveal-group>
+        <article class="card member" data-reveal>
+          <div class="avatar" data-initials="R" aria-hidden="true"></div>
+          <div>
+            <h3>Ricardo</h3>
+            <span class="role" data-i18n="team.r.role">Socio · Procesos y auditoría</span>
+            <p data-i18n="team.r.p">Ex senior de auditoría en Deloitte. Sabe dónde se pierde el dinero en los procesos de una empresa y por dónde empezar a recuperarlo.</p>
+          </div>
+        </article>
+        <article class="card member" data-reveal>
+          <div class="avatar" data-initials="A" aria-hidden="true"></div>
+          <div>
+            <h3>Adrián</h3>
+            <span class="role" data-i18n="team.a.role">Socio · Desarrollo e IA</span>
+            <!-- TODO: confirmar texto de Adrián (también EN['team.a.p'] en el script) -->
+            <p data-i18n="team.a.p">Diseña y construye las automatizaciones y el software a medida. Convierte el diagnóstico en una herramienta que tu equipo usa desde el primer día.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
+  <!-- ========== 06 · CONTACTO ========== -->
   <section class="section section-dark contact" id="contacto">
     <div class="wrap">
-      <div class="head">
+      <div class="head" data-reveal>
+        <div class="sec-mark"><b>06</b><span data-i18n="ct.mark">Contacto</span></div>
         <h2 data-i18n="ct.h2">Cuéntanos qué te quita tiempo. La auditoría corre de nuestra parte.</h2>
-        <p class="lede" data-i18n="ct.lede">Escríbenos o llámanos. Te respondemos en menos de un día laborable y concretamos la primera sesión.</p>
+        <p class="lede" data-i18n="ct.lede">Rellena el formulario y te respondemos en menos de un día laborable. Si lo prefieres, escríbenos por correo o por WhatsApp.</p>
       </div>
       <div class="contact-grid">
-        <div class="contact-big">
-          <a href="mailto:consulting@leranai.com?subject=Auditor%C3%ADa%20gratuita"><small data-i18n="ct.mail">Correo electrónico</small>consulting@leranai.com</a>
-          <a href="tel:+34639819101"><small data-i18n="ct.phone">Teléfono</small>+34 639 819 101</a>
-          <a href="https://wa.me/34639819101?text=Hola%2C%20quiero%20pedir%20la%20auditor%C3%ADa%20gratuita" target="_blank" rel="noopener"><small>WhatsApp</small><span data-i18n="ct.wa">Abrir conversación</span></a>
+        <div class="form-card" data-reveal>
+          <form id="audit-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <!-- WEB3FORMS: sustituye WEB3FORMS_ACCESS_KEY por tu access key real (https://web3forms.com). Sin el key real, el formulario devuelve error. -->
+            <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="Nueva solicitud de auditoría – Leran AI">
+            <input type="hidden" name="from_name" value="Web Leran AI">
+            <!-- Honeypot antispam: los bots lo rellenan, las personas no lo ven -->
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-nombre" data-i18n="form.name">Nombre</label>
+                <input id="f-nombre" name="Nombre" type="text" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="f-empresa" data-i18n="form.company">Empresa</label>
+                <input id="f-empresa" name="Empresa" type="text" required autocomplete="organization">
+              </div>
+              <div class="field field-full">
+                <label for="f-email" data-i18n="form.email">Email</label>
+                <input id="f-email" name="email" type="email" required autocomplete="email" inputmode="email">
+              </div>
+              <div class="field field-full">
+                <label for="f-msg" data-i18n="form.msg">¿Qué os quita más tiempo hoy?</label>
+                <textarea id="f-msg" name="Qué os quita más tiempo" required data-i18n-attr="placeholder" data-i18n="form.msg.ph" placeholder="Por ejemplo: cada semana pasamos los pedidos del correo al ERP a mano."></textarea>
+              </div>
+              <div class="field field-full">
+                <label for="f-budget" data-i18n="form.budget">Presupuesto orientativo</label>
+                <select id="f-budget" name="Presupuesto orientativo" required>
+                  <option value="" data-i18n="form.budget.0">Elige un tramo</option>
+                  <option value="Menos de 3.000 €" data-i18n="form.budget.1">Menos de 3.000 €</option>
+                  <option value="De 3.000 a 10.000 €" data-i18n="form.budget.2">De 3.000 a 10.000 €</option>
+                  <option value="Más de 10.000 €" data-i18n="form.budget.3">Más de 10.000 €</option>
+                </select>
+              </div>
+              <div class="field field-full">
+                <label class="consent">
+                  <input type="checkbox" name="Consentimiento RGPD" value="Sí" required>
+                  <!-- TODO: enlazar aquí la página de política de privacidad cuando exista -->
+                  <span data-i18n="form.consent">Acepto que Leran AI use estos datos únicamente para responder a mi solicitud. Puedes pedir su eliminación en cualquier momento escribiendo a consulting@leranai.com.</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-foot">
+              <button class="btn btn-primary" type="submit" data-i18n="form.send">Enviar solicitud</button>
+              <small data-i18n="form.note">Sin coste y sin compromiso.</small>
+            </div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
-        <div class="contact-side">
-          <div><strong data-i18n="ct.s1h">Dónde trabajamos</strong><span data-i18n="ct.s1p">España y Qatar, en remoto o en tus oficinas. Atendemos en español e inglés.</span></div>
-          <div><strong data-i18n="ct.s2h">Qué incluye la auditoría</strong><span data-i18n="ct.s2p">Una o dos sesiones con tu equipo, un informe con los puntos de mejora y un presupuesto cerrado. Sin coste y sin compromiso.</span></div>
-          <div><strong data-i18n="ct.s3h">Qué no hacemos</strong><span data-i18n="ct.s3p">No vendemos licencias ni plantillas. Si tu problema se resuelve con una herramienta que ya existe, te la recomendamos y ahí acaba nuestro trabajo.</span></div>
+        <div class="contact-side" data-reveal>
+          <div>
+            <h3 data-i18n="ct.alt">Si prefieres escribirnos directamente</h3>
+            <div class="alt-lines">
+              <a href="mailto:consulting@leranai.com?subject=Auditor%C3%ADa%20gratuita">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span>consulting@leranai.com<small data-i18n="ct.mail">Correo electrónico</small></span>
+              </a>
+              <a href="https://wa.me/34639819101?text=Hola%2C%20quiero%20pedir%20la%20auditor%C3%ADa%20gratuita" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 1a4 4 0 0 1-2-2l1-1-1-2Z"/></svg>
+                <span>+34 639 819 101<small data-i18n="ct.wa">WhatsApp y teléfono</small></span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 data-i18n="ct.s1h">Dónde trabajamos</h3>
+            <p data-i18n="ct.s1p">España y Qatar, en remoto o en tus oficinas. Atendemos en español e inglés.</p>
+          </div>
+          <div>
+            <h3 data-i18n="ct.s3h">Qué no hacemos</h3>
+            <p data-i18n="ct.s3p">No vendemos licencias ni plantillas. Si tu problema se resuelve con una herramienta que ya existe, te la recomendamos y ahí acaba nuestro trabajo.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -477,14 +693,15 @@ h3{font-weight:500;letter-spacing:-.01em;line-height:1.25}
 
 <footer class="footer">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Leran AI, inicio"><svg class="logo-svg" viewBox="80 96 716 190" aria-hidden="true"><defs><filter id="glow-f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path class="logo-letters" d="M90 104h14v79h66v14H90ZM218 104h80v13h-66v27h66v14h-66v26h66v13h-80ZM358 104h15v93h-15ZM373 104h45c23 0 42 12 42 31s-19 31-42 31h-29v-14h29c14 0 27-6 27-17s-13-17-27-17h-45ZM421 166h18l17 31h-18ZM679 104h14v93h-14Z M771 104h14v93h-14Z M679 104h20l86 93h-20Z"/><path fill="#3E8BE0" filter="url(#glow-f)" d="M560 104h19l46 94h-19l-36.5-76L533 198h-19Z"/><g fill="#3E8BE0" stroke="#3E8BE0"><line x1="90" y1="264" x2="189" y2="264" stroke-width="2"/><line x1="676" y1="264" x2="775" y2="264" stroke-width="2"/><text x="432.5" y="276" text-anchor="middle" stroke="none" font-family="Sora,sans-serif" font-weight="400" font-size="34" letter-spacing="7.5" textLength="430" lengthAdjust="spacingAndGlyphs">AI CONSULTING</text></g></svg></a>
+    <a class="logo" href="#top" aria-label="Leran AI Consulting, inicio"><svg class="logo-svg" viewBox="80 96 716 190" aria-hidden="true"><defs><filter id="glow-f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path class="logo-letters" d="M90 104h14v79h66v14H90ZM218 104h80v13h-66v27h66v14h-66v26h66v13h-80ZM358 104h15v93h-15ZM373 104h45c23 0 42 12 42 31s-19 31-42 31h-29v-14h29c14 0 27-6 27-17s-13-17-27-17h-45ZM421 166h18l17 31h-18ZM679 104h14v93h-14Z M771 104h14v93h-14Z M679 104h20l86 93h-20Z"/><path fill="#3E8BE0" filter="url(#glow-f)" d="M560 104h19l46 94h-19l-36.5-76L533 198h-19Z"/><g fill="#3E8BE0" stroke="#3E8BE0"><line x1="90" y1="264" x2="189" y2="264" stroke-width="2"/><line x1="676" y1="264" x2="775" y2="264" stroke-width="2"/><text x="432.5" y="276" text-anchor="middle" stroke="none" font-family="Sora,sans-serif" font-weight="400" font-size="34" letter-spacing="7.5" textLength="430" lengthAdjust="spacingAndGlyphs">AI CONSULTING</text></g></svg></a>
     <nav aria-label="Pie">
       <a href="#auditoria" data-i18n="nav.audit">Auditoría gratuita</a>
       <a href="#servicios" data-i18n="nav.services">Servicios</a>
-      <a href="#experiencia" data-i18n="nav.projects">Experiencia</a>
+      <a href="#equipo" data-i18n="nav.team">Quién está detrás</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
       <a href="mailto:consulting@leranai.com">consulting@leranai.com</a>
     </nav>
-    <p data-i18n="foot.copy">© 2026 Leran AI. Consultoría e ingeniería de inteligencia artificial.</p>
+    <p data-i18n="foot.copy">© 2026 Leran AI. Automatización e inteligencia artificial para empresas.</p>
   </div>
 </footer>
 
@@ -494,56 +711,88 @@ h3{font-weight:500;letter-spacing:-.01em;line-height:1.25}
 
   /* ---------- Textos en inglés (el español es el que está en el HTML) ---------- */
   var EN = {
-    'meta.title':'Leran AI — Custom artificial intelligence for your business',
-    'meta.desc':'AI consulting and engineering. Process automation and custom software. We start with a free, no-obligation audit.',
-    'nav.audit':'Free audit','nav.services':'Services','nav.projects':'Track record','nav.contact':'Contact',
-    'cta.audit':'Request a free audit','cta.projects':'See services',
-    'hero.h1':'Custom artificial intelligence for the processes you already run.',
-    'hero.p':'We automate the repetitive work in your business and build the software you cannot find off the shelf. We always start the same way: with a free, no-obligation audit that finds where time and money are being lost.',
+    'meta.title':'Leran AI — Automation and AI to win back the hours your team loses',
+    'meta.desc':'We use artificial intelligence to automate the repetitive tasks in your company and build the software you cannot find off the shelf. We start with a free, no-obligation audit.',
+    'nav.audit':'Free audit','nav.services':'Services','nav.team':'Who is behind it','nav.contact':'Contact',
+    'cta.audit':'Request your free audit','cta.services':'See services',
+    'hero.eyebrow':'Automation and AI for SMEs and larger companies',
+    'hero.h1':'Win back the hours your team loses on work that adds nothing.',
+    /* Alternativa EN para el titular alternativo: 'Your company, without the manual work that holds it back.' */
+    'hero.p':'We use artificial intelligence to automate the repetitive tasks in your business and build the software you cannot find off the shelf. We always start the same way: with a free, no-obligation audit.',
+    'hero.cmp.h':'A typical process, before and after','hero.cmp.tag':'Team time',
     'hero.legend1':'Manual process','hero.legend2':'Automated process',
-    'audit.h2':'First we find the problem. Then we talk about price.',
+    'hero.cmp.r1':'Logging orders and invoices','hero.cmp.r2':'Moving data between systems','hero.cmp.r3':'Preparing the weekly report','hero.cmp.r4':'Answering repeat enquiries',
+    'hero.cmp.note':'Illustrative only. The real figures for your business come out of the audit.',
+    'pain.mark':'The problem','pain.h2':'Does any of this sound familiar?',
+    'pain.lede':'Your company does not need to be big to lose hours every week. It is enough that the work depends on copying, checking and chasing.',
+    'pain.1':'You copy data by hand from one system to another.',
+    'pain.2':'Some processes only one person knows how to do. When they go on holiday, it stops.',
+    'pain.3':'Reports arrive late and, by the time they do, they are no use for deciding.',
+    'pain.4':'Every order or invoice passes through too many hands.',
+    'pain.bridge':'If you recognised any of these, there are hours to win back. The free audit tells you how many.',
+    'audit.mark':'The audit','audit.h2':'First we find the problem. Then we talk about price.',
     'audit.lede':'The audit is free and carries no obligation. We look at how your team works today, measure how much time goes into tasks a machine could do, and tell you plainly what is worth automating and what is not.',
-    'audit.s1h':'You get in touch','audit.s1p':'An email or a call is enough. Tell us what your business does and which part of the work eats the most time.',
+    'audit.s1h':'You get in touch','audit.s1p':'Fill in the form or send us an email. Tell us what your business does and which part of the work eats the most time.',
     'audit.s2h':'We analyse your processes','audit.s2p':'One or two sessions with the people who do the work every day. Nothing to install, no disruption.',
-    'audit.s3h':'You receive the diagnosis','audit.s3p':'A short report with the points where time and money leak away, what to automate first and a fixed quote. If there is nothing worth improving, we tell you that too.',
-    'audit.cardh':'Request your free audit','audit.cardp':'No obligation, no small print. We reply within one working day.',
-    'audit.mail':'Email','audit.phone':'Phone and WhatsApp','audit.note':'We work in Spanish and English, in Spain and in Qatar.',
-    'services.h2':'What we build',
+    'audit.s3h':'You receive the diagnosis','audit.s3p':'A short report on what is worth automating and a fixed quote. If there is nothing worth improving, we tell you that too.',
+    'audit.rh':'What you take away from the audit',
+    'audit.r1':'A short report on the points where time and money leak away.',
+    'audit.r2':'What to automate first and what is not worth touching.',
+    'audit.r3':'A fixed quote. Scope changes are agreed beforehand, not invoiced afterwards.',
+    'audit.cardh':'Free and with no obligation','audit.cardp':'We reply within one working day. We work in Spanish and English, in Spain and in Qatar.',
+    'services.mark':'Services','services.h2':'What we build',
     'services.lede':'Every business loses time in different places. That is why we do not sell a closed product: we design the solution on top of the tools you already use and shape it around how your team works.',
-    'sv1.h':'Process automation','sv1.p':'Invoicing, orders, reconciliations, reports, notifications. We connect the tools you already use (email, Excel, ERP, WhatsApp) so the repetitive work runs on its own and your team spends its time on what actually needs judgement.',
-    'sv1.l1':'Automatic reading of invoices and delivery notes','sv1.l2':'Orders that flow into your system by themselves','sv1.l3':'Reports generated and sent every week',
+    'sv1.h':'Process automation','sv1.p':'Invoicing, orders, reconciliations, reports, notifications. We make the repetitive work run on its own and connect your CRM, your ERP and your email, so a piece of data is entered once and shows up wherever it should.',
+    'sv1.l1':'Automatic reading of invoices and delivery notes','sv1.l2':'Orders that flow into your system by themselves','sv1.l3':'CRM, ERP, online store and email kept in sync',
     'sv2.h':'Custom software','sv2.p':'For when the tool you need does not exist, or the one that does forces you to work its way. Internal applications, dashboards and client portals, built around the way you work.',
     'sv2.l1':'Internal management applications','sv2.l2':'Client and supplier portals','sv2.l3':'Tools that replace shared spreadsheets',
     'sv3.h':'AI agents and assistants','sv3.p':'Assistants that answer, classify and respond using your data, not the internet’s. Customer service, lead qualification, search across your internal documentation, drafting documents from templates.',
     'sv3.l1':'WhatsApp and web assistants with your information','sv3.l2':'Automatic email classification and replies','sv3.l3':'Internal search across your manuals and contracts',
     'sv4.h':'Data and reporting','sv4.p':'We bring scattered sources together (sales, stock, accounting, marketing) into a dashboard that answers in seconds the questions that take you hours today.',
     'sv4.l1':'Sales and operations dashboards','sv4.l2':'Alerts when a figure drifts out of range','sv4.l3':'Demand and cash-flow forecasts',
-    'sv5.h':'Integrations','sv5.p':'We make your systems talk to each other: CRM, ERP, online store, accounting, calendars, payment gateways. A piece of data is entered once and shows up wherever it should.',
-    'sv5.l1':'Online store and warehouse sync','sv5.l2':'Bookings, calendar and invoicing connected','sv5.l3':'Data migrations and clean-up',
-    'sv6.h':'Websites and digital presence','sv6.p':'Fast, well-crafted websites for businesses that need to be on the map: bookings, catalogue, direct WhatsApp contact and local search. Designed to turn visits into customers, not to win awards.',
-    'sv6.l1':'Showcase websites with bookings and direct contact','sv6.l2':'Digital catalogues and menus','sv6.l3':'Google Business profile and local search',
-    'how.h2':'How we work',
+    'services.web':'We also design fast websites for businesses that want to look as good as they work.',
+    'how.mark':'Method','how.h2':'How we work',
     'how.1h':'A prototype in days, not months','how.1p':'Before committing to a long build, we put together a minimal version with your real data. If it does not solve the problem, we find out early and cheaply.',
     'how.2h':'On top of what you already use','how.2p':'We do not switch your tools. We build on your email, your Excel, your ERP and your WhatsApp, so nobody has to learn a new system.',
     'how.3h':'You own it','how.3p':'Code, data and access are yours from day one. You pay no licence fees to use what we built for you.',
     'how.4h':'Fixed quote','how.4p':'After the audit you know exactly what will be built, what it costs and when it will be ready. Scope changes are agreed beforehand, not invoiced afterwards.',
-    'xp.h2':'Track record',
-    'xp.lede':'What we have done so far, in figures. No names and no polished case studies: our projects touch our clients’ internal processes, and we prefer they be the ones to talk about them.',
-    'xp.f1h':'completed projects','xp.f1p':'delivered and in use',
-    'xp.f2h':'countries','xp.f2p':'Spain and Qatar, in Spanish and English',
-    'xp.f3h':'areas of work','xp.f3p':'automation, custom software and AI, websites',
-    'xp.f4h':'licences','xp.f4p':'code and data always belong to the client',
-    'xp.note':'If you need references before deciding, ask for them during the audit: we will put you in touch with clients in your sector who already work with us.',
-    'xp.s1':'Energy and installations','xp.s2':'Distribution and logistics','xp.s3':'Restaurants and retail','xp.s4':'Beauty and fitness','xp.s5':'Professional services',
-    'ct.h2':'Tell us what takes up your time. The audit is on us.',
-    'ct.lede':'Write or call. We reply within one working day and set up the first session.',
-    'ct.mail':'Email','ct.phone':'Phone','ct.wa':'Open a chat',
+    'team.mark':'Who is behind it','team.h2':'Two people. No middlemen.',
+    'team.lede':'You talk to the people who do the work, from the first call to delivery.',
+    'team.r.role':'Partner · Processes and audit',
+    'team.r.p':'Former senior auditor at Deloitte. He knows where money leaks out of a company’s processes and where to start recovering it.',
+    'team.a.role':'Partner · Development and AI',
+    'team.a.p':'Designs and builds the automations and the custom software. Turns the diagnosis into a tool your team uses from day one.',
+    'ct.mark':'Contact','ct.h2':'Tell us what takes up your time. The audit is on us.',
+    'ct.lede':'Fill in the form and we reply within one working day. If you prefer, write to us by email or WhatsApp.',
+    'form.name':'Name','form.company':'Company','form.email':'Email',
+    'form.msg':'What takes up most of your time today?',
+    'form.msg.ph':'For example: every week we copy orders from email into the ERP by hand.',
+    'form.budget':'Indicative budget','form.budget.0':'Choose a range',
+    'form.budget.1':'Under €3,000','form.budget.2':'€3,000 to €10,000','form.budget.3':'Over €10,000',
+    'form.consent':'I agree that Leran AI uses this data only to reply to my request. You can ask for it to be deleted at any time by writing to consulting@leranai.com.',
+    'form.send':'Send request','form.note':'Free and with no obligation.',
+    'form.sending':'Sending…',
+    'form.ok':'Thank you. We will get back to you within one working day.',
+    'form.err':'Something went wrong and the form could not be sent. Please write to us at <a href="mailto:consulting@leranai.com?subject=Free%20audit">consulting@leranai.com</a>.',
+    'form.e.required':'Please fill in this field.',
+    'form.e.email':'Please enter a valid email address, e.g. name@company.com.',
+    'form.e.select':'Please choose a range.',
+    'form.e.consent':'We need your consent to reply to you.',
+    'ct.alt':'If you would rather write to us directly','ct.mail':'Email','ct.wa':'WhatsApp and phone',
     'ct.s1h':'Where we work','ct.s1p':'Spain and Qatar, remotely or at your offices. We work in Spanish and English.',
-    'ct.s2h':'What the audit includes','ct.s2p':'One or two sessions with your team, a report with the improvement points and a fixed quote. Free and with no obligation.',
     'ct.s3h':'What we do not do','ct.s3p':'We do not sell licences or templates. If your problem is solved by a tool that already exists, we recommend it and our work ends there.',
-    'foot.copy':'© 2026 Leran AI. Artificial intelligence consulting and engineering.'
+    'foot.copy':'© 2026 Leran AI. Automation and artificial intelligence for companies.'
   };
-  var ES = {};
+  /* Textos en español que solo existen en el JS (estados del formulario) */
+  var ES = {
+    'form.sending':'Enviando…',
+    'form.ok':'Gracias. Te respondemos en menos de un día laborable.',
+    'form.err':'Algo ha fallado y no hemos podido enviar el formulario. Escríbenos a <a href="mailto:consulting@leranai.com?subject=Auditor%C3%ADa%20gratuita">consulting@leranai.com</a>.',
+    'form.e.required':'Rellena este campo, por favor.',
+    'form.e.email':'Escribe un email válido, por ejemplo nombre@empresa.com.',
+    'form.e.select':'Elige un tramo, por favor.',
+    'form.e.consent':'Necesitamos tu consentimiento para poder responderte.'
+  };
 
   /* ---------- i18n ---------- */
   var lang = 'es';
@@ -587,118 +836,83 @@ h3{font-weight:500;letter-spacing:-.01em;line-height:1.25}
   try{ initial = localStorage.getItem('leran-lang') || ((navigator.language||'').slice(0,2)==='en' ? 'en' : 'es'); }catch(e){}
   applyLang(initial);
 
-  /* ---------- Hero: del caos al orden ---------- */
-  var canvas = document.getElementById('flow');
-  var ctx = canvas.getContext('2d');
+  /* ---------- Movimiento ---------- */
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W, H, dpr, gate, particles = [], lanes, running = true, lastT = 0;
-  var N = 460;
 
-  function resize(){
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var r = canvas.getBoundingClientRect();
-    W = r.width; H = r.height;
-    canvas.width = Math.round(W*dpr); canvas.height = Math.round(H*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    gate = W < 820 ? W*0.5 : W*0.56;
-    lanes = Math.max(8, Math.round(H/34));
-    if(W < 820) N = 260; else N = 460;
-    particles = [];
-    for(var i=0;i<N;i++) particles.push(spawn(true));
-    ctx.fillStyle = '#0D1522'; ctx.fillRect(0,0,W,H);
+  /* Hero: barras comparativas al cargar */
+  var compare = document.getElementById('compare');
+  if(compare){
+    if(reduce){ compare.classList.add('loaded'); }
+    else { requestAnimationFrame(function(){ requestAnimationFrame(function(){ compare.classList.add('loaded'); }); }); }
   }
-  function spawn(anywhere){
-    var p = {};
-    p.x = anywhere ? Math.random()*W : -10 - Math.random()*80;
-    p.y = Math.random()*H;
-    p.vx = 0.6 + Math.random()*0.9;
-    p.vy = (Math.random()-0.5)*1.4;
-    p.seed = Math.random()*1000;
-    p.lane = Math.floor(Math.random()*lanes);
-    p.speed = 2.2 + Math.random()*1.6;
-    p.size = 0.9 + Math.random()*1.1;
-    p.px = p.x; p.py = p.y;
-    return p;
-  }
-  function noise(x,y,tm,s){
-    return Math.sin(x*0.011 + s + tm*0.0006) * Math.cos(y*0.013 - s*0.7 + tm*0.0004)
-         + 0.5*Math.sin((x+y)*0.021 + tm*0.0009 + s);
-  }
-  function step(tm, dt){
-    var k = Math.min(dt/16.7, 2.5);
-    var laneH = H/lanes;
-    for(var i=0;i<particles.length;i++){
-      var p = particles[i];
-      p.px = p.x; p.py = p.y;
-      if(p.x < gate){
-        var a = noise(p.x, p.y, tm, p.seed) * Math.PI;
-        p.vx += Math.cos(a)*0.18*k; p.vy += Math.sin(a)*0.22*k;
-        p.vx = Math.max(0.25, Math.min(2.6, p.vx + 0.02*k));
-        p.vy = Math.max(-2.2, Math.min(2.2, p.vy*0.985));
-        p.x += p.vx*k; p.y += p.vy*k;
-      } else {
-        var ty = (p.lane + 0.5)*laneH;
-        p.y += (ty - p.y)*Math.min(0.09*k, 0.6);
-        p.vy = 0;
-        p.vx += (p.speed - p.vx)*0.06*k;
-        p.x += p.vx*k;
-      }
-      if(p.y < -20) p.y = H+10; else if(p.y > H+20) p.y = -10;
-      if(p.x > W+20) { particles[i] = spawn(false); }
-    }
-  }
-  function draw(){
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = 'rgba(13,21,34,0.09)';
-    ctx.fillRect(0,0,W,H);
-    // línea de paso
-    ctx.strokeStyle = 'rgba(62,139,224,0.35)';
-    ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(gate+0.5, 0); ctx.lineTo(gate+0.5, H); ctx.stroke();
-    ctx.lineCap = 'round';
-    for(var i=0;i<particles.length;i++){
-      var p = particles[i];
-      var dx = p.x-p.px, dy = p.y-p.py;
-      if(dx*dx+dy*dy > 900) continue;
-      if(p.x < gate){
-        var fade = Math.min(1, (p.x+40)/(gate*0.6));
-        ctx.strokeStyle = 'rgba(200,215,232,'+(0.3+0.35*fade)+')';
-        ctx.lineWidth = p.size*0.9;
-      } else {
-        var prog = Math.min(1, (p.x-gate)/140);
-        ctx.strokeStyle = 'rgba('+Math.round(62+(140-62)*prog*0.6)+','+Math.round(139+(194-139)*prog*0.5)+',224,'+(0.55+0.35*prog)+')';
-        ctx.lineWidth = p.size*1.3;
-      }
-      ctx.beginPath(); ctx.moveTo(p.px,p.py); ctx.lineTo(p.x+0.01,p.y+0.01); ctx.stroke();
-    }
-  }
-  function frame(tm){
-    if(!running) return;
-    var dt = lastT ? tm-lastT : 16.7; lastT = tm;
-    step(tm, dt); draw();
-    requestAnimationFrame(frame);
-  }
-  function staticFrame(){
-    ctx.fillStyle = '#0D1522'; ctx.fillRect(0,0,W,H);
-    for(var s=0;s<420;s++){ step(s*16.7, 16.7); if(s>300) draw(); }
-  }
-  resize();
-  window.addEventListener('resize', function(){ resize(); if(reduce) staticFrame(); });
-  if(reduce){ staticFrame(); }
-  else {
-    requestAnimationFrame(frame);
-    if('IntersectionObserver' in window){
-      new IntersectionObserver(function(es){
-        var vis = es[0].isIntersecting;
-        if(vis && !running){ running = true; lastT = 0; requestAnimationFrame(frame); }
-        else if(!vis) running = false;
-      }).observe(canvas);
-    }
-    document.addEventListener('visibilitychange', function(){
-      if(document.hidden) running = false;
-      else if(!running){ running = true; lastT = 0; requestAnimationFrame(frame); }
+
+  /* Aparición suave al hacer scroll, con escalonado dentro de cada grupo */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+  document.querySelectorAll('[data-reveal-group]').forEach(function(g){
+    Array.prototype.forEach.call(g.children, function(child, i){
+      if(child.hasAttribute('data-reveal')) child.style.transitionDelay = (i*90)+'ms';
     });
+  });
+  if(reduce || !('IntersectionObserver' in window)){
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    revealEls.forEach(function(el){ io.observe(el); });
   }
+
+  /* ---------- Formulario (Web3Forms) ---------- */
+  var form = document.getElementById('audit-form');
+  var status = document.getElementById('form-status');
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  function setStatus(kind, html){
+    status.className = 'form-status show ' + kind;
+    status.innerHTML = html;
+  }
+  function messageFor(f){
+    var v = f.validity;
+    if(v.valueMissing){
+      if(f.type==='checkbox') return t('form.e.consent');
+      if(f.tagName==='SELECT') return t('form.e.select');
+      return t('form.e.required');
+    }
+    if(v.typeMismatch) return t('form.e.email');
+    return '';
+  }
+  form.querySelectorAll('input,select,textarea').forEach(function(f){
+    if(f.type==='hidden' || f.name==='botcheck') return;
+    f.addEventListener('invalid', function(){ f.setCustomValidity(messageFor(f)); });
+    f.addEventListener('input', function(){ f.setCustomValidity(''); });
+    f.addEventListener('change', function(){ f.setCustomValidity(''); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    form.querySelectorAll('input,select,textarea').forEach(function(f){ f.setCustomValidity(''); });
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+
+    var data = new FormData(form);
+    var empresa = (data.get('Empresa') || '').toString().trim();
+    data.set('subject', 'Nueva solicitud de auditoría – ' + (empresa || 'sin empresa'));
+
+    submitBtn.disabled = true;
+    var btnText = submitBtn.textContent;
+    submitBtn.textContent = t('form.sending');
+    setStatus('info', t('form.sending'));
+
+    fetch('https://api.web3forms.com/submit', { method:'POST', headers:{ 'Accept':'application/json' }, body:data })
+      .then(function(r){ return r.json().then(function(j){ return { ok:r.ok && j.success, json:j }; }); })
+      .then(function(res){
+        if(res.ok){ setStatus('ok', t('form.ok')); form.reset(); }
+        else { setStatus('err', t('form.err')); }
+      })
+      .catch(function(){ setStatus('err', t('form.err')); })
+      .then(function(){ submitBtn.disabled = false; submitBtn.textContent = btnText; });
+  });
 })();
 </script>
 
