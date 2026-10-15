@@ -597,7 +597,6 @@ div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:
           <div>
             <h3>Adrián</h3>
             <span class="role" data-i18n="team.a.role">Socio · Desarrollo e IA</span>
-            <!-- TODO: confirmar texto de Adrián (también EN['team.a.p'] en el script) -->
             <p data-i18n="team.a.p">Diseña y construye las automatizaciones y el software a medida. Convierte el diagnóstico en una herramienta que tu equipo usa desde el primer día.</p>
           </div>
         </article>
@@ -651,8 +650,7 @@ div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:
               <div class="field field-full">
                 <label class="consent">
                   <input type="checkbox" name="Consentimiento RGPD" value="Sí" required>
-                  <!-- TODO: enlazar aquí la página de política de privacidad cuando exista -->
-                  <span data-i18n="form.consent">Acepto que Leran AI use estos datos únicamente para responder a mi solicitud. Puedes pedir su eliminación en cualquier momento escribiendo a consulting@leranai.com.</span>
+                  <span data-i18n-html="form.consent">He leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y acepto que Leran AI use estos datos únicamente para responder a mi solicitud.</span>
                 </label>
               </div>
             </div>
@@ -699,6 +697,7 @@ div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:
       <a href="#servicios" data-i18n="nav.services">Servicios</a>
       <a href="#equipo" data-i18n="nav.team">Quién está detrás</a>
       <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+      <a href="privacidad.html" data-i18n="nav.privacy">Privacidad</a>
       <a href="mailto:consulting@leranai.com">consulting@leranai.com</a>
     </nav>
     <p data-i18n="foot.copy">© 2026 Leran AI. Automatización e inteligencia artificial para empresas.</p>
@@ -713,7 +712,7 @@ div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:
   var EN = {
     'meta.title':'Leran AI — Automation and AI to win back the hours your team loses',
     'meta.desc':'We use artificial intelligence to automate the repetitive tasks in your company and build the software you cannot find off the shelf. We start with a free, no-obligation audit.',
-    'nav.audit':'Free audit','nav.services':'Services','nav.team':'Who is behind it','nav.contact':'Contact',
+    'nav.audit':'Free audit','nav.services':'Services','nav.team':'Who is behind it','nav.contact':'Contact','nav.privacy':'Privacy',
     'cta.audit':'Request your free audit','cta.services':'See services',
     'hero.eyebrow':'Automation and AI for SMEs and larger companies',
     'hero.h1':'Win back the hours your team loses on work that adds nothing.',
@@ -769,7 +768,7 @@ div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:
     'form.msg.ph':'For example: every week we copy orders from email into the ERP by hand.',
     'form.budget':'Indicative budget','form.budget.0':'Choose a range',
     'form.budget.1':'Under €3,000','form.budget.2':'€3,000 to €10,000','form.budget.3':'Over €10,000',
-    'form.consent':'I agree that Leran AI uses this data only to reply to my request. You can ask for it to be deleted at any time by writing to consulting@leranai.com.',
+    'form.consent':'I have read the <a href="privacidad.html" target="_blank" rel="noopener">privacy policy</a> and agree that Leran AI uses this data only to reply to my request.',
     'form.send':'Send request','form.note':'Free and with no obligation.',
     'form.sending':'Sending…',
     'form.ok':'Thank you. We will get back to you within one working day.',
