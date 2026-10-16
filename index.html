@@ -587,17 +587,9 @@ div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:
         <h2 data-i18n="team.h2">Dos personas. Sin intermediarios.</h2>
         <p class="lede" data-i18n="team.lede">Hablas con quienes hacen el trabajo, desde la primera llamada hasta la entrega.</p>
       </div>
-      <!--
-        FOTOS REALES: cuando tengas las fotos, guárdalas en /team/adrian.jpg y /team/ricardo.jpg
-        (cuadradas, mínimo 400x400 px) y sustituye cada
-            <div class="avatar" data-initials="A" aria-hidden="true"></div>
-        por
-            <img class="avatar" src="team/adrian.jpg" alt="Adrián, socio de Leran AI" width="116" height="116" loading="lazy">
-        La clase .avatar ya está preparada para <img> (object-fit: cover). No hace falta tocar el CSS.
-      -->
       <div class="team-grid" data-reveal-group>
         <article class="card member" data-reveal>
-          <div class="avatar" data-initials="R" aria-hidden="true"></div>
+          <img class="avatar" src="team/ricardo.jpg" alt="Ricardo, socio de Leran AI" data-i18n="team.r.alt" data-i18n-attr="alt" width="116" height="116" loading="lazy">
           <div>
             <h3>Ricardo</h3>
             <span class="role" data-i18n="team.r.role">Socio · Procesos y auditoría</span>
@@ -605,7 +597,7 @@ div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:
           </div>
         </article>
         <article class="card member" data-reveal>
-          <div class="avatar" data-initials="A" aria-hidden="true"></div>
+          <img class="avatar" src="team/adrian.jpg" alt="Adrián, socio de Leran AI" data-i18n="team.a.alt" data-i18n-attr="alt" width="116" height="116" loading="lazy">
           <div>
             <h3>Adrián</h3>
             <span class="role" data-i18n="team.a.role">Socio · Desarrollo e IA</span>
@@ -772,6 +764,7 @@ div.avatar::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:
     'team.mark':'Who is behind it','team.h2':'Two people. No middlemen.',
     'team.lede':'You talk to the people who do the work, from the first call to delivery.',
     'team.r.role':'Partner · Processes and audit',
+    'team.r.alt':'Ricardo, partner at Leran AI','team.a.alt':'Adrián, partner at Leran AI',
     'team.r.p':'Former senior auditor at Deloitte. He knows where money leaks out of a company’s processes and where to start recovering it.',
     'team.a.role':'Partner · Development and AI',
     'team.a.p':'Designs and builds the automations and the custom software. Turns the diagnosis into a tool your team uses from day one.',
